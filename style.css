@@ -1,59 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+body{
+  background-color: white;
+}
 /* **********header************ */
 .logo {
   width: 150px;
-  z-index: 5;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
 }
 
 .header-text {
   font-size: 20px;
-  z-index: 3;
+  transition: font-size 0.3s ease;
 }
 
 .upper-heading {
   display: block;
 }
 
-.upper-small-heading {
-  display: none;
-  text-shadow: 0 0 4px rgb(7, 7, 7);
-  color: white;
-  font-size: 1.5rem;
-  font-family: "Rubik Spray Paint", serif;
-  font-weight: 300;
-  font-style: normal;
+
+
+@media (max-width: 1024px) {
+  .logo {
+    width: 120px;
+  }
+  .header-text {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-
-
   .logo {
     width: 100px;
+  }
+  .header-text {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 500px) {
+  .logo {
+    width: 80px;
+  }
   .header-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
-@media (max-width: 300px) {
-  .upper-small-heading {
-    display: block;
+@media (max-width: 350px) {
+ 
+  .logo {
+    width: 60px;
   }
-
-  .upper-heading {
-    display: none;
-
+  .header-text {
+    font-size: 10px;
   }
 }
 
-@media(max-width: 200px) {
-  .upper-small-heading {
-    display: none;
+@media (max-width: 200px) {
+  .logo {
+    width: 50px;
   }
-
+  .header-text {
+    font-size: 5px;
+  }
 }
+
 
 /* ************* navbar************* */
 
@@ -91,8 +108,9 @@
 
 
 .navbar {
-  top: 14%;
-  position: fixed;
+
+  position: relative;
+  top: -50px;
   z-index: 2;
 }
 
@@ -101,6 +119,7 @@
 
 
 .navbar.scrolled {
+  position: fixed;
   background: linear-gradient(12deg, #555e78, #020f2f);
   z-index: 10;
   padding: 7px 0px;
@@ -140,15 +159,14 @@
 @media (max-width: 964px) {
  
 
-  .navbar {
-    top: 14%;
-    background: linear-gradient(177deg, rgb(231 231 234 / 37%), #021032);
-
-  }
+ 
 
 
   .navbar-collapse {
-    margin-top: 40px;
+    padding: 20px;
+    padding-top: 40px;
+    background: linear-gradient(12deg, #555e78, #020f2f)
+    
   }
 
 }
@@ -157,12 +175,11 @@
   .navbar.scrolled .nav-logo {
     left: 20px;
   }
-  .navbar{
-    top: 7%;
-  }
-  
+}
 
-
+  .navbar-toggler-icon {
+    display: inline-block;
+    
 
 }
 
@@ -176,7 +193,9 @@
        
 /* **************main-content************ */
 
-
+.base{
+  height: 900px;
+}
 .video-box {
   width: 100%;
   height: 110%;
@@ -187,7 +206,7 @@
 }
 
 .main-content {
-  height: 80vh;
+  height:600px;
 }
 
 .content-text {
@@ -204,14 +223,16 @@
 }
 
 @media (max-width: 768px) {
+  .main-content {
+    position: relative;
+    top: -40px;
+  }
   .video-box {
     height: 92%;
 
   }
 
-  .main-content {
-    height: 60vh;
-  }
+
 
   .content-text {
 
@@ -222,6 +243,12 @@
 }
 
 @media (max-width: 500px) {
+  .base{
+    height: 700px;
+  }
+  .main-content{
+    height: 400px;
+  }
 
   .content-text {
     font-size: 18px;
@@ -327,7 +354,6 @@ justify-content: center; */
 
 .banner {
   width: 100%;
-  height: 200vh;
   background-image: url('assests/love.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -584,6 +610,8 @@ justify-content: center; */
 
  /* Latest Updates Section */
  .latest-updates {
+  position: relative;
+  top: -60px;
   width: 100%;
   background: linear-gradient(12deg, #555e78, #020f2f);
   color: white;
