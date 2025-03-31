@@ -1,0 +1,199 @@
+.logo {
+    width: 150px;
+    z-index: 5;
+  }
+  
+  .header-text {
+    font-size: 20px;
+    z-index: 3;
+  }
+  
+  .upper-heading {
+    display: block;
+  }
+  
+  .upper-small-heading {
+    display: none;
+    text-shadow: 0 0 4px rgb(7, 7, 7);
+    color: white;
+    font-size: 1.5rem;
+    font-family: "Rubik Spray Paint", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @media (max-width: 768px) {
+  
+  
+    .logo {
+      width: 100px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .header-text {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .upper-small-heading {
+      display: block;
+    }
+  
+    .upper-heading {
+      display: none;
+  
+    }
+  }
+  
+  @media(max-width: 200px) {
+    .upper-small-heading {
+      display: none;
+    }
+  
+  }
+  
+  /* ************* navbar************* */
+  
+  .dropdown a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  
+    font-size: 15px;
+    position: relative;
+  }
+  
+  .dropdown a:hover {
+    color: white;
+  }
+  
+  .dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .dropdown-menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  
+  
+  
+  .navbar {
+    top: 14%;
+    position: fixed;
+    z-index: 2;
+  }
+  
+  
+  
+  
+  
+  .navbar.scrolled {
+    background: linear-gradient(12deg, #555e78, #020f2f);
+    z-index: 10;
+    padding: 7px 0px;
+    border-bottom: 1px solid white;
+    top: 0%;
+  }
+  
+  .navbar .nav-logo {
+    width: 60px;
+    display: none;
+    /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .navbar.scrolled .nav-logo {
+    display: block;
+    width: 70px;
+    position: absolute;
+    background-color: #4c546a;
+    border-bottom: 2px solid white;
+    border-radius: 40%;
+    top: 0px;
+    left: 60px;
+    /* Show when scrolled */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 964px) {
+   
+  
+    .navbar {
+      top: 14%;
+      background: linear-gradient(177deg, rgb(231 231 234 / 37%), #021032);
+  
+    }
+  
+  
+    .navbar-collapse {
+      margin-top: 40px;
+    }
+  
+  }
+  
+  @media (max-width: 500px) {
+    .navbar.scrolled .nav-logo {
+      left: 20px;
+    }
+    .navbar{
+      top: 7%;
+    }
+    
+  
+  
+  
+  }
+  
+  @media (max-width: 300px) {
+   
+  
+    .navbar.scrolled .nav-logo {
+      width: 50px;
+    }
+  }
+       
+  
+
+
+  
+/* ***********footer************** */
+
+
+.footer {
+    background: linear-gradient(12deg, #555e78, #020f2f);
+  }
+  
+  .footer-container {
+    flex-direction: row;
+  }
+  
+  .footer-bottom {
+    background-color: #020f2f;
+  }
+  
+  @media (max-width: 400px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  }
