@@ -75,21 +75,11 @@
             <ul class="navbar-nav d-flex justify-content-between gap-3 ">
 
               <li class="nav-item dropdown">
-                <button class="btn btn-transparent dropdown-toggle  " style="color: white; border:none"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  ABOUT US
+                <button class="btn btn-transparent   " style="color: white; border:none"
+                    onclick="window.location.href='about.html';">
+                 ABOUT US 
                 </button>
-                <ul class="dropdown-menu dropdown-menu-dark p-2 " style="background-color: #021032;">
-                  <li><a class="dropdown-item mb-2 " href="#">Principal Desk</a></li>
-                  <li><a class="dropdown-item  mb-2" href="#">Administration</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Vision</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Mission</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Goal</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">History</a></li>
-                  <!-- CHANGE VIDEO LINK -->
-                  <li><a class="dropdown-item mb-2" href="change_background.html">CHANGE BACKGROUND</a></li>
-                  <!-- CHANGE VIDEO LINK -->
-                </ul>
+               
               </li>
               <li class="nav-item dropdown">
                 <button class="btn btn-transparent dropdown-toggle  " style="color: white; border:none"
@@ -97,12 +87,12 @@
                   GOVERNANCE
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark p-2 " style="background-color: #021032;">
-                  <li><a class="dropdown-item mb-2" href="governance.html">Governing Body</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Academic Council</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Statutory Committees</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Statutory </a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Non Statutory </a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Service and Conduct </a></li>
+                  <li><a class="dropdown-item mb-2" href="./governing-body.html">Governing Body</a></li>
+                  <li><a class="dropdown-item mb-2" href="./academic-council.html">Academic Council</a></li>
+                  <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/statcom_n24.pdf">Statutory Committees</a></li>
+                  <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/Statutory%20Committees.pdf">Statutory </a></li>
+                  <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/Non%20Statutory%20Committees_2.pdf">Non Statutory </a></li>
+                  <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/Service%20and%20Conduct%20Rules.pdf">Service and Conduct </a></li>
                 </ul>
               </li>
              
@@ -114,8 +104,8 @@
                 <ul class="dropdown-menu dropdown-menu-dark p-2 " style="background-color: #021032;">
                   <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/staff%20data%20examiantion.pdf">COE Office</a></li>
                   <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/gr_com_exam.pdf">Grievance Committee</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Examination Portal for Staff</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Examination Portal for Students</a></li>
+                  <li><a class="dropdown-item mb-2" href="./staff-login.html">Examination Portal for Staff</a></li>
+                  <li><a class="dropdown-item mb-2" href="./student-login.html">Examination Portal for Students</a></li>
                   <li><a class="dropdown-item mb-2" href="#">Results</a></li>
                   <li><a class="dropdown-item mb-2" href="https://gndec.ac.in/sites/default/files/RoH24.pdf">Roll of Honour</a></li>
                 </ul>
@@ -127,9 +117,11 @@
                   QUALITY WORK
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark p-2 " style="background-color: #021032;">
-                  <li><a class="dropdown-item mb-2" href="#">Action</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Another action</a></li>
-                  <li><a class="dropdown-item mb-2" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item mb-2" href="#">AICTE Approval</a></li>
+                  <li><a class="dropdown-item mb-2" href="#">Autonomy</a></li>
+                  <li><a class="dropdown-item mb-2" href="#">PTU affiliation</a></li>
+                  <li><a class="dropdown-item mb-2" href="#">NBA & ISO Certification</a></li>
+                  <li><a class="dropdown-item mb-2" href="#">NAAC</a></li>
                 </ul>
               </li>
 
@@ -371,6 +363,72 @@ document.addEventListener("DOMContentLoaded", function () {
         navbar.classList.remove("scrolled");
       }
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    let dropdownItems = document.querySelectorAll(".dropdown-menu .dropdown-item");
+    let navbarToggler = document.querySelector(".navbar-toggler");
+
+    // Close dropdown when an item is clicked
+    dropdownItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            let dropdownMenu = this.closest(".dropdown-menu");
+            let dropdownToggle = dropdownMenu.closest(".dropdown").querySelector(".dropdown-toggle");
+
+            if (dropdownToggle) {
+                dropdownToggle.click(); // Close the dropdown
+            }
+
+            // If in mobile view and the navbar is open, close it
+            if (window.innerWidth < 992 && navbarToggler && navbarToggler.classList.contains("collapsed") === false) {
+                navbarToggler.click(); // Simulates a click to close the mobile menu
+            }
+        });
+    });
+
+    // Close navbar on mobile when clicking the toggler button
+    if (navbarToggler) {
+        navbarToggler.addEventListener("click", function () {
+            let navbarCollapse = document.querySelector(".navbar-collapse");
+
+            if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+                navbarToggler.click(); // Closes the navbar if open
+            }
+        });
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let navbarToggler = document.querySelector(".navbar-toggler");
+    let navbarCollapse = document.querySelector(".navbar-collapse");
+
+    // Function to close the navbar
+    function closeNavbar() {
+        if (navbarCollapse.classList.contains("show")) {
+            navbarToggler.click(); // Simulates a click to close the menu
+        }
+    }
+
+    // Close navbar when clicking any menu item (small screens)
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(function (item) {
+        item.addEventListener("click", function () {
+            closeNavbar();
+        });
+    });
+
+    // Close navbar when clicking outside of it
+    document.addEventListener("click", function (event) {
+        let isClickInsideNavbar = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+
+        if (!isClickInsideNavbar) {
+            closeNavbar();
+        }
+    });
+});
+
+
+
 
 
     document.addEventListener("DOMContentLoaded", function () {
